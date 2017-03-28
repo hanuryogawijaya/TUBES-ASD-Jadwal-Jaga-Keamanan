@@ -84,8 +84,8 @@ void mainMenu() {
 				case 11: deleteParent(); system("break"); break;
 				case 12: deleteChild(); system("break"); break;
 				case 13: sortRelasi(); system("break"); break;
-				//case 14: deleterparent();system("break"); break;
-				//case 15: deleterchild();system("break");break;
+				case 14: deleterparent();system("break"); break;
+				case 15: deleterchild();system("break");break;
 				case 0: makasihpak(); system("break"); break;
 			}
 		} while(pilihan != 0);
@@ -157,18 +157,13 @@ void deleteParent() {
 	deleteByIDParent(Lp, Xp);
 }
 
-//void deleterparent() {
-    //cout << "Find Data Parent" << endl;
-	//cout << "ID Pos : ";
-	//cin >> Xp.id_pos;
-	//Pp = findElmParent(Lp, Xp);
-	//if(Pp == NULL) {
-		//cout << "Not Found" << endl;
-	//}
-    //else {
-        //deleteRelasiByParent(Lr, Pp);
-    //}
-//}
+void deleterparent() {
+    cout << "Find Data Parent" << endl;
+	cout << "ID Pos : ";
+	cin >> Xp.id_pos;
+	Pp = findElmParent(Lp, Xp);
+        deleteRelasiByParent(Lr, Pp);
+}
 
 void disconnectRelasi() {
 	cout << "Input ID Parent" << endl;
@@ -293,15 +288,10 @@ void viewRelasi() {
 	printInfoRelasi(Lr);
 }
 
-//void deleterchild() {
-  //cout << "Find Data Child" << endl;
-	//cout << "ID Satpam : ";
-	//cin >> Xc.id_satpam;
-	//Pc = findElmChild (Lc, Xc);
-	//if(Pc == NULL) {
-		//cout << "Not Found" << endl;
-	//}
-    //else {
-        //deleteRelasiByChild(Lr, Pc);
-    //}
-//}
+void deleterchild() {
+  cout << "Find Data Child" << endl;
+	cout << "ID Satpam : ";
+	cin >> Xc.id_satpam;
+	Pc = findElmChild (Lc, Xc);
+        deleteRelasiByChild(Lr, Pc);
+}
