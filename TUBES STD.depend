@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1490701882 source:c:\users\hanur\desktop\tugas besar\tubes std\child.cpp
+	"child.h"
+
+1490701882 c:\users\hanur\desktop\tugas besar\tubes std\child.h
+	<iostream>
+	<string>
+
+1490708578 source:c:\users\hanur\desktop\tugas besar\tubes std\main.cpp
+	<iostream>
+	<stdlib.h>
+	"parent.h"
+	"child.h"
+	"relasi.h"
+
+1490701882 c:\users\hanur\desktop\tugas besar\tubes std\parent.h
+	<iostream>
+	<string>
+
+1490674972 c:\users\hanur\desktop\tugas besar\tubes std\relasi.h
+	<iostream>
+	"parent.h"
+	"child.h"
+
+1490701882 source:c:\users\hanur\desktop\tugas besar\tubes std\parent.cpp
+	"parent.h"
+	"relasi.h"
+
+1490707706 source:c:\users\hanur\desktop\tugas besar\tubes std\relasi.cpp
+	"relasi.h"
+	"parent.h"
+
