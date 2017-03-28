@@ -30,3 +30,34 @@
 	"relasi.h"
 	"parent.h"
 
+1490701882 source:c:\users\hanur\desktop\github\tubes\tubes-asd-jadwal-jaga-keamanan\child.cpp
+	"child.h"
+
+1490701882 c:\users\hanur\desktop\github\tubes\tubes-asd-jadwal-jaga-keamanan\child.h
+	<iostream>
+	<string>
+
+1490714965 source:c:\users\hanur\desktop\github\tubes\tubes-asd-jadwal-jaga-keamanan\main.cpp
+	<iostream>
+	<stdlib.h>
+	"parent.h"
+	"child.h"
+	"relasi.h"
+
+1490701882 c:\users\hanur\desktop\github\tubes\tubes-asd-jadwal-jaga-keamanan\parent.h
+	<iostream>
+	<string>
+
+1490715409 c:\users\hanur\desktop\github\tubes\tubes-asd-jadwal-jaga-keamanan\relasi.h
+	<iostream>
+	"parent.h"
+	"child.h"
+
+1490701882 source:c:\users\hanur\desktop\github\tubes\tubes-asd-jadwal-jaga-keamanan\parent.cpp
+	"parent.h"
+	"relasi.h"
+
+1490714706 source:c:\users\hanur\desktop\github\tubes\tubes-asd-jadwal-jaga-keamanan\relasi.cpp
+	"relasi.h"
+	"parent.h"
+

@@ -26,12 +26,14 @@ struct List_r {
 
 void createListRelasi(List_r &L);
 void dealokasiRelasi(address_r &P);
+address_r connectRelasi(address_p P, address_c C);
+address_r findElmRelasi(List_r L, address_p P, address_c C);
+address_r findrelasichild(List_r &L, address_c C);
+address_r findrelasiparent(List_r &L, address_p P);
 void insertFirstRelasi(List_c &L, address_c P);
 void insertLastRelasi(List_r &L, address_r P);
 void deleteFirstRelasi(List_r &L, address_r &P);
 void deleteLastRelasi(List_r &L, address_r &P);
-address_r connectRelasi(address_p P, address_c C);
-address_r findElmRelasi(List_r L, address_p P, address_c C);
 void printInfoRelasi(List_r &L);
 void insertAfterParent(List_r L, address_r Prec, address_r P);
 void deleteAfterRelasi(List_r L, address_r Prec, address_r &P);
