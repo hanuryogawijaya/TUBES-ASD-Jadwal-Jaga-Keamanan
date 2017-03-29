@@ -1,14 +1,20 @@
 #include "relasi.h"
 #include "parent.h"
 
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
 
 void createListRelasi(List_r &L) {
 	first(L) = NULL;
 }
 
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
 void dealokasiRelasi(address_r &P) {
 	delete P;
 }
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
 
 address_r connectRelasi(address_p P, address_c C) {
     address_r Q = new elmlist_r;
@@ -17,6 +23,8 @@ address_r connectRelasi(address_p P, address_c C) {
     next(Q) = NULL;
     return Q;
 }
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
 
 address_r findElmRelasi(List_r L, address_p P, address_c C) {
 	address_r Q = first(L);
@@ -28,6 +36,8 @@ address_r findElmRelasi(List_r L, address_p P, address_c C) {
 	}
 	return NULL;
 }
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
 
 address_r findrelasichild(List_r &L, address_c C){
 address_r Q = first(L);
@@ -40,6 +50,8 @@ address_r Q = first(L);
 	return NULL;
 }
 
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
 address_r findrelasiparent(List_r &L, address_p P){
 address_r Q = first(L);
 	while(Q != NULL) {
@@ -50,6 +62,10 @@ address_r Q = first(L);
 	}
 	return NULL;
 }
+
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
+
 void printInfoRelasi(List_r &L) {
 	if(first(L) == NULL) {
 		cout << "List Kosong" << endl;
@@ -62,19 +78,26 @@ void printInfoRelasi(List_r &L) {
             cout << "Petugas" << endl;
             cout << "ID Satpam  : "<< info(child(P)).id_satpam << endl;
             cout << "Nama Satpam: "<<info(child(P)).nama_satpam << endl;
+            cout << endl;
 			P = next(P);
 		}
 	}
 }
 
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
+
 void printByValueRelasi(List_r &L, address_r P) {
-	cout << "(" << info(parent(P)).id_pos << ")"
-				<< info(parent(P)).nama_pos
-				<< " -> "
-				<< "(" << info(child(P)).id_satpam << ")"
-				<< info(child(P)).nama_satpam << endl;
+            cout << "ID Pos     : " << info(parent(P)).id_pos << endl;
+            cout << "Nama Pos   : "<< info(parent(P)).nama_pos << endl;
+            cout << "Petugas" << endl;
+            cout << "ID Satpam  : "<< info(child(P)).id_satpam << endl;
+            cout << "Nama Satpam: "<<info(child(P)).nama_satpam << endl;
+            cout << endl;
 }
 
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
 void insertFirstRelasi(List_c &L, address_c P) {
 	if(first(L) == NULL) {
 		first(L) = P;
@@ -84,10 +107,15 @@ void insertFirstRelasi(List_c &L, address_c P) {
 	}
 }
 
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
 void insertAfterRelasi(List_r L, address_r Prec, address_r P) {
 	next(P) = next(Prec);
 	next(Prec) = P;
 }
+
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
 
 void insertLastRelasi(List_r &L, address_r P) {
 	if(first(L) == NULL) {
@@ -101,6 +129,8 @@ void insertLastRelasi(List_r &L, address_r P) {
 	}
 }
 
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
 void deleteFirstRelasi(List_r &L, address_r &P) {
 	if(next(first(L)) == NULL) {
 		P = first(L);
@@ -114,6 +144,21 @@ void deleteFirstRelasi(List_r &L, address_r &P) {
 	}
 }
 
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
+void deleteAfterRelasi(List_r L, address_r Prec, address_r &P) {
+	if(Prec == first(L)) {
+		deleteFirstRelasi(L, P);
+	} else {
+		P = next(Prec);
+		next(Prec) = next(P);
+		next(P) = NULL;
+		dealokasiRelasi(P);
+	}
+}
+
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
 void deleteLastRelasi(List_r &L, address_r &P) {
 	address_r Q;
 	Q = first(L);
@@ -126,31 +171,8 @@ void deleteLastRelasi(List_r &L, address_r &P) {
 }
 
 
-void deleteAfterRelasi(List_r L, address_r Prec, address_r &P) {
-	if(Prec == first(L)) {
-		deleteFirstRelasi(L, P);
-	} else {
-		P = next(Prec);
-		next(Prec) = next(P);
-		next(P) = NULL;
-		dealokasiRelasi(P);
-	}
-}
-
-void disconnectRelasi(List_r &L, address_r P) {
-    address_r Q;
-    if(P == first(L)) {
-        deleteFirstRelasi(L, P);
-    } else if(next(P) == NULL) {
-        deleteLastRelasi(L, P);
-    } else {
-        Q = first(L);
-		while(next(Q) != P) {
-			Q = next(Q);
-		}
-		deleteAfterRelasi(L, Q, P);
-    }
-}
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
 
 void deleteRelasiByChild(List_r &L, address_c C) {
     address_r A, S, Z;
@@ -183,36 +205,40 @@ void deleteRelasiByChild(List_r &L, address_c C) {
         }
 }
 
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
+
 void deleteRelasiByParent(List_r &L, address_p P) {
-    address_r B, Q, Z;
+    address_r A, S, Z;
         if(first(L)==NULL){
             cout<<"Empty List!"<<endl;
         }
         else{
-            B=findrelasiparent(L, P);
-        if(B==NULL){
+            A=findrelasiparent(L, P);
+        if(A==NULL){
             cout<<"ID Not Found"<<endl;
             }
         else{
-            while(B!=NULL){
-                if(B==first(L)){
-                    deleteFirstRelasi(L,B);
+            while(A!=NULL){
+                if(A==first(L)){
+                    deleteFirstRelasi(L,A);
                 }
-                else if (next(B)==NULL && B!=first(L)){
-                    deleteLastRelasi(L,B);
+                else if (next(A)==NULL && A!=first(L)){
+                    deleteLastRelasi(L,A);
                 }
                 else{
-                    Q=first(L);
-                    while (parent(next(Q)) != P) {
-                        Q=next(Q);
+                    S=first(L);
+                    while (parent(next(S)) != P) {
+                        S=next(S);
                     }
-                deleteAfterRelasi(L,Q,B);
+                deleteAfterRelasi(L,S,A);
                 }
-            B=findrelasiparent(L,P);
+            A=findrelasiparent(L,P);
             }
         }
         }
 }
+
 void sortRelasi(List_r &L) {
     List_r S;
     address_r P, Q, Z;
@@ -241,3 +267,20 @@ void sortRelasi(List_r &L) {
     }
 }
 
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
+
+void disconnectRelasi(List_r &L, address_r P) {
+    address_r Q;
+    if(P == first(L)) {
+        deleteFirstRelasi(L, P);
+    } else if(next(P) == NULL) {
+        deleteLastRelasi(L, P);
+    } else {
+        Q = first(L);
+		while(next(Q) != P) {
+			Q = next(Q);
+		}
+		deleteAfterRelasi(L, Q, P);
+    }
+}

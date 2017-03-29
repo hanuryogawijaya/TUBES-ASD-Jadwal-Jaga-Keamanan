@@ -1,10 +1,8 @@
 #include "parent.h"
 #include "relasi.h"
 
-/**
-* NIM : 1301164407
-* Nama : Ikhsan Ramadhan B
-**/
+/* NIM : 1301164407
+Nama : Ikhsan Ramadhan B */
 
 void createListParent(List_p &L) {
 	first(L) = NULL;

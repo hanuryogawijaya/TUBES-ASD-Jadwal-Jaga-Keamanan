@@ -1,9 +1,7 @@
 #include "child.h"
 
-/**
-* NIM : 1301164153
-* Nama : Muhammad Hanur Yoga Wijaya
-**/
+/* NIM : 1301164153
+Nama : Muhammad Hanur Yoga Wijaya */
 
 void createListChild(List_c &L) {
 	first(L) = NULL;
